@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_oauth/services/authservice.dart';
 import 'package:flutter_oauth/screens/signin-screen.dart';
 import 'package:flutter_oauth/widgets/costom-button.dart';
-import 'package:flutter_oauth/screens/homescreen.dart'; // Add this import
-// import 'package:google_sign_in/google_sign_in.dart'; // Import Google Sign-In package
+import 'package:flutter_oauth/screens/homescreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -59,7 +58,6 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (context) => homeScreen()),
       );
     } else {
-      // Show error message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Invalid login credentials. Please try again.')),
       );
@@ -75,12 +73,10 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Email TextField
             TextField(
               controller: _emailController,
               decoration: InputDecoration(labelText: 'Email'),
             ),
-            // Password TextField
             TextField(
               controller: _passwordController,
               obscureText: true,
@@ -102,14 +98,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         icon: Icon(Icons.login),
                         label: Text('Login with Google'),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.black, // Text color
-                          backgroundColor: Colors.white, // Button color
+                          foregroundColor: Colors.black,
+                          backgroundColor: Colors.white,
                         ),
                       ),
                     ],
                   ),
             SizedBox(height: 20),
-            // Navigate to Signup screen
             GestureDetector(
               onTap: () {
                 Navigator.push(

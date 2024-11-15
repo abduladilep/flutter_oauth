@@ -16,19 +16,19 @@ class _SignupScreenState extends State<SignupScreen> {
   bool _isLoading = false;
 
   void _signup() async {
-    // setState(() {
-    //   _isLoading = true;
-    // });
+    setState(() {
+      _isLoading = true;
+    });
 
     final email = _emailController.text;
     final password = _passwordController.text;
 
-   print(email);
+    print(email);
     final response = await AuthService.signup(email, password);
-     print(response);
-    // setState(() {
-    //   _isLoading = false;
-    // });
+    print(response);
+    setState(() {
+      _isLoading = false;
+    });
 
     if (response != null) {
       Navigator.pushReplacement(
@@ -37,7 +37,6 @@ class _SignupScreenState extends State<SignupScreen> {
       );
     } else {
       print("nottt");
-      // Show error message
     }
   }
 
@@ -66,8 +65,8 @@ class _SignupScreenState extends State<SignupScreen> {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => LoginScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
               },
               child: Text(
                 'Already have an account? Login',
