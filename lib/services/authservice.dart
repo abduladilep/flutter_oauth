@@ -36,7 +36,7 @@ class AuthService {
       Uri.parse('$BASE_URL/signup'),
       body: {'email': email, 'password': password},
     );
-    print(response);
+    print("$response response");
     if (response.statusCode == 201) {
       final data = jsonDecode(response.body);
       final token = data['token'];
