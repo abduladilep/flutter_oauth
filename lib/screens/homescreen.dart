@@ -5,11 +5,12 @@ import 'package:flutter_oauth/screens/login-screen.dart';
 
 class homeScreen extends StatelessWidget {
 
- void _logout(BuildContext context) async {
-    await AuthService.logout();
-    Navigator.pushReplacement(
+  void _logout(BuildContext context) async {
+    await AuthService.logout(context);
+
+     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginScreen()), 
+      MaterialPageRoute(builder: (context) => LoginScreen()),
     );
   }
 

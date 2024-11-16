@@ -14,6 +14,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   bool _isLoading = false;
 
+  
+
   void _googleLogin() async {
     setState(() {
       _isLoading = true;
@@ -99,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         label: Text('Login with Google'),
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.black,
-                          backgroundColor: Colors.white,
+                          backgroundColor: const Color.fromARGB(255, 226, 122, 62),
                         ),
                       ),
                     ],
